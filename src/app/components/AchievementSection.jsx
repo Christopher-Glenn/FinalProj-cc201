@@ -48,12 +48,12 @@ const AchievementSection = () => {
   }, []);
 
   return (
-    <div id="achievementSection" className="py-8 sm:px-4 md:px-8 lg:px-12 xl:px-16">
-      <div className="border-[#33353F] border rounded-md py-8 flex flex-row items-center justify-between">
+    <div id="achievementSection" className="py-8 x-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="border-[#33353F] border rounded-md py-8 px-4 md:px-16 flex flex-col sm:flex-row items-center justify-between">
         {achievementsList.map((achievement, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center mx-4"
+            className="flex flex-col items-center justify-center my-4 sm:my-0"
           >
             <h2 className="text-white text-4xl font-bold flex flex-row">
               {isVisible && (
