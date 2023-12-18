@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
@@ -48,8 +47,8 @@ const AchievementSection = () => {
   }, []);
 
   return (
-    <div id="achievementSection" className="py-8 x-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="border-[#33353F] border rounded-md py-8 px-16 flex flex-row items-cneter justify-between ">
+    <div id="achievementSection" className="py-8 sm:px-4 md:px-8 lg:px-12 xl:px-16">
+      <div className="border-[#33353F] border rounded-md py-8 flex flex-row items-center justify-between">
         {achievementsList.map((achievement, index) => (
           <div
             key={index}
