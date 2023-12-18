@@ -10,48 +10,49 @@ const EmailSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value
-    };
+    // Commenting out the email sending logic for now
+    // const data = {
+    //   email: e.target.email.value,
+    //   subject: e.target.subject.value,
+    //   message: e.target.message.value
+    // };
 
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    // const JSONdata = JSON.stringify(data);
+    // const endpoint = "/api/send";
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSONdata,
-    };
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSONdata,
+    // };
 
-    try {
-      const response = await fetch(endpoint, options);
+    // try {
+    //   const response = await fetch(endpoint, options);
 
-      if (!response.ok) {
-        throw new Error(`Failed to send message. Status: ${response.status}`);
-      }
+    //   if (!response.ok) {
+    //     throw new Error(`Failed to send message. Status: ${response.status}`);
+    //   }
 
-      const contentType = response.headers.get('Content-Type');
+    //   const contentType = response.headers.get('Content-Type');
 
-      if (contentType && contentType.includes('application/json')) {
-        const resData = await response.json();
-        console.log('API Response:', resData);
+    //   if (contentType && contentType.includes('application/json')) {
+    //     const resData = await response.json();
+    //     console.log('API Response:', resData);
 
-        if (resData.status === 'success') {
-          console.log('Message sent.');
-          setEmailSubmitted(true);
-        } else {
-          console.error('Failed to send message:', resData.error);
-        }
-      } else {
-        console.error('Unexpected response format:', contentType);
-      }
-    } catch (error) {
-      console.error('Error sending message:', error.message);
-    }
+    //     if (resData.status === 'success') {
+    //       console.log('Message sent.');
+    //       setEmailSubmitted(true);
+    //     } else {
+    //       console.error('Failed to send message:', resData.error);
+    //     }
+    //   } else {
+    //     console.error('Unexpected response format:', contentType);
+    //   }
+    // } catch (error) {
+    //   console.error('Error sending message:', error.message);
+    // }
   };
 
   return (
